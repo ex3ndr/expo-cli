@@ -9,7 +9,7 @@ export default function (program: Command) {
       .description('Upload an FCM key for Android push notifications')
       .helpGroup('notifications')
       .option('--api-key [api-key]', 'Server API key for FCM.'),
-    () => import('./push/pushAndroidUploadAsync')
+    () => import('./push/removalNotice')
   );
 
   applyAsyncActionProjectDir(
@@ -17,7 +17,7 @@ export default function (program: Command) {
       .command('push:android:show [path]')
       .description('Log the value currently in use for FCM notifications for this project')
       .helpGroup('notifications'),
-    () => import('./push/pushAndroidShowAsync')
+    () => import('./push/removalNotice')
   );
 
   applyAsyncActionProjectDir(
@@ -25,6 +25,6 @@ export default function (program: Command) {
       .command('push:android:clear [path]')
       .description('Delete a previously uploaded FCM credential')
       .helpGroup('notifications'),
-    () => import('./push/pushAndroidClearAsync')
+    () => import('./push/removalNotice')
   );
 }
